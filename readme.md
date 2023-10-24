@@ -1,5 +1,7 @@
 # Beauty On
 
+# SEMPRE, SEMPRE QUE FOR MEXER DÊ O GIT PULL PRIMEIRO
+
 ## tecnologias
 - React Native
 - Expo
