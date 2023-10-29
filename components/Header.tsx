@@ -1,42 +1,28 @@
 import { View, Text, StyleSheet, StatusBar } from "react-native"
+import styled from "styled-components/native";
 
-
+import { UserCircle } from "phosphor-react-native";
 interface HeaderProps {
     title: string;
     children: React.ReactNode;
 }
 
+const Container = styled.View`
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    padding-top: ${StatusBar.currentHeight + 8}px;
+    display: flex;
+    flex-direction: row;
+`
 export const Header = (props: HeaderProps) => {
 
 
     return (
-        <View style={style.container}>
-            <View style={style.title}>
-                <Text style={style.textLogo}>{props.title}</Text>
-
-            </View>
+        <Container>
             {props.children}
-        </View>
+            <UserCircle size={64} />
+        </Container>
     )
 }
-
-const style = StyleSheet.create({
-    container: {
-        display: 'flex',
-        height: 240,
-        paddingTop: StatusBar.currentHeight + 16,
-        borderBottomLeftRadius: 56,
-        borderBottomRightRadius: 56,
-        paddingLeft: 16,
-        paddingBottom: 36,
-        backgroundColor: '#BDB282',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    title: {
-        width: `100%`,
-    },
-    textLogo: {
-        fontSize: 32,
-    }
-})
