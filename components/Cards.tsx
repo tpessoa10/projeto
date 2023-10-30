@@ -16,25 +16,51 @@ const CardsGroup = styled.View`
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: space-around;
 `
 const CardsGroupScroll = styled.ScrollView`
     display: flex;
     gap: 8px;
+    border: solid 1px black;
+    
 `
+
 
 const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-26.jpg`
 
 export const CardsContainer = () => {
     return (
+        <>
         <SectionCard>
             <TitleSection>Salões Proximos</TitleSection>
-                <View>
                     <CardsGroupScroll horizontal>
-                        <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                        <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                        <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                <CardsGroup>
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                </CardsGroup>
                     </CardsGroupScroll>
-                </View>
         </SectionCard>
+        <SectionCard>
+            <TitleSection>Pedicure</TitleSection>
+                <CardsGroup>
+                    <CardsGroupScroll horizontal>
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                    </CardsGroupScroll>
+                </CardsGroup>
+        </SectionCard>
+        <SectionCard>
+            <TitleSection>Design de sobrancelha</TitleSection>
+                <CardsGroup>
+                    <CardsGroupScroll horizontal>
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                    </CardsGroupScroll>
+                </CardsGroup>
+        </SectionCard>
+        </>
     )
 }

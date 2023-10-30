@@ -7,6 +7,7 @@ const SimpleCard = styled.View`
     height: 150px;
     border-radius: 8px;
     align-items: center;
+    margin: 4px;
 `
 
 const ImageLogo = styled.Image`
