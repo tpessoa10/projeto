@@ -16,12 +16,12 @@ const CardsGroup = styled.View`
     display: flex;
     flex-direction: row;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-evenly;
 `
 const CardsGroupScroll = styled.ScrollView`
     display: flex;
     gap: 8px;
-    border: solid 1px black;
+
     
 `
 
@@ -30,37 +30,41 @@ const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vint
 
 export const CardsContainer = () => {
     return (
-        <>
+        <ScrollView>
+
         <SectionCard>
             <TitleSection>Salões Proximos</TitleSection>
                     <CardsGroupScroll horizontal>
-                <CardsGroup>
+                        <CardsGroup>
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                </CardsGroup>
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                        </CardsGroup>
                     </CardsGroupScroll>
         </SectionCard>
         <SectionCard>
             <TitleSection>Pedicure</TitleSection>
-                <CardsGroup>
                     <CardsGroupScroll horizontal>
+                        <CardsGroup>
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                        </CardsGroup>
                     </CardsGroupScroll>
-                </CardsGroup>
         </SectionCard>
         <SectionCard>
             <TitleSection>Design de sobrancelha</TitleSection>
-                <CardsGroup>
                     <CardsGroupScroll horizontal>
+                        <CardsGroup>
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
                             <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                            <Card nome='Barber Shop' fotoUrl={fotoUri} />
+                        </CardsGroup>
                     </CardsGroupScroll>
-                </CardsGroup>
         </SectionCard>
-        </>
+        </ScrollView>
     )
 }

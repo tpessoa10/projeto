@@ -8,6 +8,8 @@ const SimpleCard = styled.View`
     border-radius: 8px;
     align-items: center;
     margin: 4px;
+    padding-right: 22px;
+    padding-left: 22px;
 `
 
 const ImageLogo = styled.Image`
