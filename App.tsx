@@ -6,6 +6,7 @@ import { HomePage } from './src/screen/Home';
 
 import * as Location from 'expo-location'
 import { useEffect, useState } from 'react';
+import { ResultadosFiltrados } from './src/screen/ResultadosFiltrados';
 
 const stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ export default function App() {
     <NavigationContainer>
       <stack.Navigator initialRouteName='Home'>
         <stack.Screen name="Home" component={HomePage} options={{headerShown: false}} />
+        <stack.Screen name="Filtrados" component={ResultadosFiltrados} options={{headerShown: false}}/>
       </stack.Navigator>
       <StatusBar style="auto"/>
     </NavigationContainer>

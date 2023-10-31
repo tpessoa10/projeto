@@ -6,3 +6,5 @@ const getEstabelecimentosProximos = async (latitude: number, longitude: number) 
 
     return response;
 }
+
+export {getEstabelecimentosProximos}
