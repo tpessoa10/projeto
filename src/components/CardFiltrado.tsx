@@ -20,12 +20,13 @@ const SimpleCardFiltrado = styled.View`
 `
 
 const Logo = styled.Image`
-    width: 10%;
+    width: 15%;
     height: 85%;
-    border-radius: 20px;
+    border-radius: 28px;
     margin-left: 10px;
     margin-top: 5px;
     margin-right: 10px;
+    margin-bottom: 5px;
 `
 export const CardFiltrado = ({nome, fotoUrl}:CardProps) => {
     return (
