@@ -23,18 +23,18 @@ export const HomePage = () => {
     const [pesquisa, setPesquisa] = useState('')
 
     const handleSubmit = () => {
-        navigation.navigate('Filtrados')
+        navigation.navigate('Filtrados' as never)
     }
+
+
     return (
         <ContainerHome>
             {/* <ScrollView> */}
 
             <Header title='Beauty On'>
-                <BarraPesquisa />
+                <BarraPesquisa onSubmit={handleSubmit}/>
             </Header>
-            <CardsContainer>
-
-            </CardsContainer>
+            <CardsContainer/>
             {/* </ScrollView> */}
         </ContainerHome>
     )

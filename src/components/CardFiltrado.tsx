@@ -8,25 +8,31 @@ interface CardProps {
 }
 
 const SimpleCardFiltrado = styled.View`
-    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
     height: 70px;
     border-radius: 8px;
     margin: 6px;
     background-color: #dae1e8;
-    display: flex;
-    justify-content: flex-start;
 `
 
 const Logo = styled.Image`
     width: 10%;
-    height: 90%;
-    border-radius: 16px;
+    height: 85%;
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
 `
-const CardFiltrado = ({nome, fotoUrl}:CardProps) => {
+export const CardFiltrado = ({nome, fotoUrl}:CardProps) => {
+    return (
     <SimpleCardFiltrado>
         <Logo source={{uri: fotoUrl}}/>
         <Text>{nome}</Text>
     </SimpleCardFiltrado>
+    )
 }
 
-export default  CardFiltrado

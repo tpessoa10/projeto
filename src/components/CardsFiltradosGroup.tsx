@@ -22,16 +22,13 @@ const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vint
 export const CardsFiltradosGroup = () => {
     return (
         <ScrollView >
-            <View>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
                 <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-            </View>
         </ScrollView>
     )
 }
 
-export default CardsFiltradosGroup

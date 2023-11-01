@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { BarraPesquisa } from '../components/BarraPesquisa';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import CardsFiltradosGroup from '../components/CardsFiltradosGroup';
+import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 const ContainerHome = styled.View`
 
     padding-left: 12px;
@@ -22,9 +22,7 @@ export const ResultadosFiltrados = () => {
             <Header title='Beauty On'>
                 <BarraPesquisa />
             </Header>
-            <CardsFiltradosGroup>
-
-            </CardsFiltradosGroup>
+            <CardsFiltradosGroup/>
 
             {/* </ScrollView> */}
         </ContainerHome>
