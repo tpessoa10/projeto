@@ -16,7 +16,7 @@ const InputView = styled.View`
 `
 
 const InputText = styled.TextInput`
-
+    width: 100%;
 `
 
 interface BarraPesquisaProps{
@@ -27,7 +27,7 @@ export const BarraPesquisa = ({onSubmit}:BarraPesquisaProps) => {
     return (
         <InputView>
             <MagnifyingGlass size={24} />
-            <InputText placeholder="Pesquisar" onSubmitEditing={onSubmit}/>
+            <InputText placeholder="Pesquisar" onSubmitEditing={onSubmit} keyboardType="web-search"/>
         </InputView>
     )
 }

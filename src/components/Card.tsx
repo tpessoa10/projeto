@@ -2,14 +2,11 @@ import { Image, Text } from "react-native"
 import styled from "styled-components/native"
 
 const SimpleCard = styled.View`
-    width: 33.3%;
+    width: 160px;
     display: flex;
     height: 150px;
     border-radius: 8px;
     align-items: center;
-    margin: 4px;
-    padding-right: 22px;
-    padding-left: 22px;
 `
 
 const ImageLogo = styled.Image`

@@ -31,6 +31,7 @@ export const CardsContainer = () => {
                 let location = await Location.getCurrentPositionAsync({})
                 let latitude = location.coords.latitude
                 let longitude = location.coords.longitude
+                console.log(latitude, longitude)
                 const response = await getEstabelecimentosProximos(latitude, longitude)
                 setSaloes(response)
             } catch (error){
@@ -49,7 +50,6 @@ export const CardsContainer = () => {
                     {saloes.map((salao) => (
                         <Card nome={salao.nomeEmpresa} fotoUrl={fotoUri} />
                     ))}
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
                 </CardGroupScrolling>
             </SectionCard>
             <SectionCard>
