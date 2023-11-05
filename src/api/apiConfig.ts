@@ -1,8 +1,5 @@
 import axios, { AxiosInstance } from "axios";
 
-
-
-
 export class Api {
 
     static readonly instace: AxiosInstance = axios.create({
