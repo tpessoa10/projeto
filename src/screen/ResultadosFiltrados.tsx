@@ -7,6 +7,7 @@ import styled from 'styled-components/native';
 import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 import { ArrowLeft } from 'phosphor-react-native';
 import { useNavigation } from '@react-navigation/native';
+import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
 const ContainerHome = styled.View`
 
     padding-left: 12px;
@@ -32,6 +33,7 @@ export const ResultadosFiltrados = () => {
                 </ButtonReturn>
                 <BarraPesquisa />
             </Header>
+            <CardTipoServicoGroup/>
             <CardsFiltradosGroup/>
 
             {/* </ScrollView> */}

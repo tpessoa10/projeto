@@ -8,6 +8,7 @@ import { CardsContainer } from '../components/CardsContainer';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { ResultadosFiltrados } from './ResultadosFiltrados';
+import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
 
 const ContainerHome = styled.View`
 
@@ -34,6 +35,7 @@ export const HomePage = () => {
             <Header title='Beauty On'>
                 <BarraPesquisa onSubmit={handleSubmit}/>
             </Header>
+            <CardTipoServicoGroup/>
             <CardsContainer/>
             {/* </ScrollView> */}
         </ContainerHome>
