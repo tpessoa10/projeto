@@ -4,11 +4,7 @@ import { Header } from '../components/Header';
 import { BarraPesquisa } from '../components/BarraPesquisa';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import { CardsContainer } from '../components/Cards';
-import { useNavigation } from '@react-navigation/native';
-import { useState } from 'react';
-import { ResultadosFiltrados } from './ResultadosFiltrados';
-
+import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 const ContainerHome = styled.View`
 
     padding-left: 12px;
@@ -18,23 +14,16 @@ const ContainerHome = styled.View`
     gap: 32px;
 `
 
-export const HomePage = () => {
-    const navigation = useNavigation()
-    const [pesquisa, setPesquisa] = useState('')
-
-    const handleSubmit = () => {
-        navigation.navigate('Filtrados' as never)
-    }
-
-
+export const ResultadosFiltrados = () => {
     return (
         <ContainerHome>
             {/* <ScrollView> */}
 
             <Header title='Beauty On'>
-                <BarraPesquisa onSubmit={handleSubmit}/>
+                <BarraPesquisa />
             </Header>
-            <CardsContainer/>
+            <CardsFiltradosGroup/>
+
             {/* </ScrollView> */}
         </ContainerHome>
     )

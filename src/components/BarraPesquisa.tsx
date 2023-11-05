@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, TextInput } from "react-native"
+import { StyleSheet, View, Text, TextInput, NativeSyntheticEvent, TextInputSubmitEditingEventData } from "react-native"
 import styled from "styled-components/native"
 import { MagnifyingGlass } from "phosphor-react-native"
 
@@ -16,13 +16,18 @@ const InputView = styled.View`
 `
 
 const InputText = styled.TextInput`
+
 `
 
-export const BarraPesquisa = () => {
+interface BarraPesquisaProps{
+    onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
+}
+
+export const BarraPesquisa = ({onSubmit}:BarraPesquisaProps) => {
     return (
         <InputView>
             <MagnifyingGlass size={24} />
-            <InputText placeholder="Pesquisar" />
+            <InputText placeholder="Pesquisar" onSubmitEditing={onSubmit}/>
         </InputView>
     )
 }

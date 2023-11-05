@@ -6,8 +6,11 @@ import { HomePage } from './src/screen/Home';
 
 import * as Location from 'expo-location'
 import { useEffect, useState } from 'react';
+import { ResultadosFiltrados } from './src/screen/ResultadosFiltrados';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const stack = createNativeStackNavigator();
+//const stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
 export default function App() {
 
@@ -29,9 +32,10 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <stack.Navigator initialRouteName='Home'>
-        <stack.Screen name="Home" component={HomePage} options={{headerShown: false}} />
-      </stack.Navigator>
+      <Stack.Navigator initialRouteName='Home'>
+        <Stack.Screen name="Home" component={HomePage} options={{headerShown: false}} />
+        <Stack.Screen name="Filtrados" component={ResultadosFiltrados} />
+      </Stack.Navigator>
       <StatusBar style="auto"/>
     </NavigationContainer>
   );
