@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 export class Api {
 
     static readonly instace: AxiosInstance = axios.create({
-        baseURL: "http://localhost:3000",
+        baseURL: "http://168.75.103.246",
     })
 
     public static async get(url: string) {

@@ -3,8 +3,7 @@ import styled from "styled-components/native"
 const CardsGroup = styled.View`
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-evenly;
+    gap: 8px;
 `
 const CardsGroupScroll = styled.ScrollView`
     display: flex;
@@ -16,7 +15,7 @@ interface CardsGroupScrollProps {
 
 export const CardGroupScrolling = ({children}: CardsGroupScrollProps) => {
     return (
-        <CardsGroupScroll horizontal contentContainerStyle={{ paddingHorizontal: 20 }}>
+        <CardsGroupScroll horizontal contentContainerStyle={{ paddingHorizontal: 10 }}>
             <CardsGroup>
                 {children}
             </CardsGroup>

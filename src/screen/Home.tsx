@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { BarraPesquisa } from '../components/BarraPesquisa';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
-import { CardsContainer } from '../components/Cards';
+import { CardsContainer } from '../components/CardsContainer';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { ResultadosFiltrados } from './ResultadosFiltrados';
