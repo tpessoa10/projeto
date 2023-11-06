@@ -1,10 +1,12 @@
 import styled from "styled-components/native"
 import {Text} from 'react-native'
+import { useState } from "react"
 
 interface CardTipoServicoProps{
     tipoServico: string
     cor?:string
 }
+
 
 const SimpleCardTipoServico = styled.TouchableOpacity`
     display: flex;
@@ -18,6 +20,8 @@ const SimpleCardTipoServico = styled.TouchableOpacity`
 `
 
 export const CardTipoServico = ({tipoServico, cor}:CardTipoServicoProps) => {
+    const [value, setValue] = useState('')
+    const [pressed, setPressed] = useState(false)
     if(tipoServico == 'Pedicure'){
         cor = "red"
     }else if (tipoServico == 'Cabelo'){
@@ -25,8 +29,19 @@ export const CardTipoServico = ({tipoServico, cor}:CardTipoServicoProps) => {
     } else if (tipoServico == 'Manicure'){
         cor = "pink"
     }
+
+    const onPress = () => {
+        setValue(tipoServico)
+        pressed? setPressed(false) : setPressed(true)
+    }
+
+    const cardStyle = {
+        backgroundColor: cor,
+        opacity: pressed ? 0.5 : 1.0
+    }
+
     return (
-        <SimpleCardTipoServico style={{backgroundColor: cor}}>
+        <SimpleCardTipoServico style={{backgroundColor: cardStyle.backgroundColor, opacity:cardStyle.opacity}} onPress={onPress}>
             <Text style={{color:"white"}}>{tipoServico}</Text>
         </SimpleCardTipoServico>
     )
