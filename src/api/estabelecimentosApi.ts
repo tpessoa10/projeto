@@ -7,4 +7,8 @@ const getEstabelecimentosProximos = async (latitude: number, longitude: number) 
     return response;
 }
 
-export {getEstabelecimentosProximos}
+const getEstabelecimentosPorPesquisa = async(porNome: string, tipoServico: string) => {
+    const response = await Api.get(`/estabelecimentos?porNome=${porNome}&tipoServico=${tipoServico}`)
+}
+
+export {getEstabelecimentosProximos, getEstabelecimentosPorPesquisa}
