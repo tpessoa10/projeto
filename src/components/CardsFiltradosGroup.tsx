@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native"
+import { FlatList, ScrollView, View } from "react-native"
 import styled from "styled-components/native"
 import  {CardFiltrado}  from "./CardFiltrado"
 
@@ -12,23 +12,19 @@ const CardsGroupScroll = styled.ScrollView`
     display: flex;
 `
 
-interface CardFiltadosGroupScrollProps {
-    children: React.ReactNode
+interface CardFiltadosGroupProps {
+    data: any[]
 }
 
 const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-26.jpg`
 
 
-export const CardsFiltradosGroup = () => {
+export const CardsFiltradosGroup = (props: CardFiltadosGroupProps) => {
     return (
-        <ScrollView >
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-                <CardFiltrado nome="Barbers Shops" fotoUrl={fotoUri}/>
-        </ScrollView>
+        <FlatList data={props.data}
+            renderItem={({ item }) => <CardFiltrado nome={item.nomeEmpresa} fotoUrl={fotoUri} />}
+            contentContainerStyle={{ gap: 8 }}
+        />
     )
 }
 

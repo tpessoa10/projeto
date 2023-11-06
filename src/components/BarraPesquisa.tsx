@@ -21,13 +21,14 @@ const InputText = styled.TextInput`
 
 interface BarraPesquisaProps{
     onSubmit?: (e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
+    onChangeText?: (text: string) => void
 }
 
-export const BarraPesquisa = ({onSubmit}:BarraPesquisaProps) => {
+export const BarraPesquisa = ({onSubmit, onChangeText}:BarraPesquisaProps) => {
     return (
         <InputView>
             <MagnifyingGlass size={24} />
-            <InputText placeholder="Pesquisar" onSubmitEditing={onSubmit} keyboardType="web-search"/>
+            <InputText placeholder="Pesquisar" onSubmitEditing={onSubmit} onChangeText={onChangeText} keyboardType="web-search"/>
         </InputView>
     )
 }

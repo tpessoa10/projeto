@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { FlatList, ScrollView, Text, View } from 'react-native';
 import styled from "styled-components/native"
 import { Card } from './Card';
 import { CardGroupScrolling } from './CardGroupScrolling';
@@ -17,9 +17,7 @@ const TitleSection = styled.Text`
     font-weight: bold;
 `
 
-
 const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-26.jpg`
-
 
 export const CardsContainer = () => {
     
@@ -45,30 +43,15 @@ export const CardsContainer = () => {
 
             <SectionCard>
                 <TitleSection>Salões Proximos</TitleSection>
-                <CardGroupScrolling>
-                    {saloes.map((salao) => (
-                        <Card nome={salao.nomeEmpresa} fotoUrl={fotoUri} />
-                    ))}
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                </CardGroupScrolling>
+                
+                    <CardGroupScrolling data={saloes}/>
             </SectionCard>
             <SectionCard>
                 <TitleSection>Pedicure</TitleSection>
-                <CardGroupScrolling>
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                </CardGroupScrolling>
             </SectionCard>
             <SectionCard>
                 <TitleSection>Design de sobrancelha</TitleSection>
-                <CardGroupScrolling>
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                    <Card nome='Barber Shop' fotoUrl={fotoUri} />
-                </CardGroupScrolling>
+                
             </SectionCard>
         </ScrollView>
     )

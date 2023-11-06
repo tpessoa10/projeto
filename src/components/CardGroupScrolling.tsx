@@ -1,24 +1,21 @@
-import styled from "styled-components/native"
+import { FlatList } from "react-native"
+import { Card } from "./Card"
 
-const CardsGroup = styled.View`
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-`
-const CardsGroupScroll = styled.ScrollView`
-    display: flex;
-`
 
 interface CardsGroupScrollProps {
-    children: React.ReactNode
+    data: any[]
 }
 
-export const CardGroupScrolling = ({children}: CardsGroupScrollProps) => {
+const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vintage-de-barbearia_441059-26.jpg`
+
+export const CardGroupScrolling = ({ data }: CardsGroupScrollProps) => {
     return (
-        <CardsGroupScroll horizontal contentContainerStyle={{ paddingHorizontal: 10 }}>
-            <CardsGroup>
-                {children}
-            </CardsGroup>
-        </CardsGroupScroll>
+        <FlatList
+            data={data}
+            renderItem={({ item }) => <Card nome={item.nomeEmpresa} fotoUrl={fotoUri} />}
+            horizontal
+            contentContainerStyle={{ gap: 8}}
+        />
+
     )
 }

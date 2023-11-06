@@ -12,7 +12,12 @@ import { Header } from './src/components/Header';
 import { BarraPesquisa } from './src/components/BarraPesquisa';
 
 //const stack = createNativeStackNavigator();
-const Stack = createNativeStackNavigator()
+export type RootStackParamList = {
+  Home: undefined;
+  ResultadosFiltrados: {estabelecimentos: any[]};
+}
+const Stack = createNativeStackNavigator<RootStackParamList>()
+
 
 export default function App() {
 
@@ -36,20 +41,17 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={HomePage} />
-        <Stack.Screen name="Filtrados" component={ResultadosFiltrados} />
+      <Stack.Navigator initialRouteName='Home' screenOptions={{header: () => {
+        return (
+          <Header title='Beauty On' />
+        )
+      }, headerBackVisible: true, contentStyle: {backgroundColor: `#fff`}}}>
+        <Stack.Group>
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="ResultadosFiltrados" component={ResultadosFiltrados}  />
+        </Stack.Group>
       </Stack.Navigator>
       <StatusBar style="auto"/>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

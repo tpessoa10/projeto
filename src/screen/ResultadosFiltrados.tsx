@@ -6,8 +6,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 import { ArrowLeft } from 'phosphor-react-native';
-import { useNavigation } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
+import { RootStackParamList } from '../../App';
 const ContainerHome = styled.View`
 
     padding-left: 12px;
@@ -15,26 +16,27 @@ const ContainerHome = styled.View`
     display: flex;
     width: 100%;
     gap: 32px;
+    margin-top: 32px;
 `
 
 const ButtonReturn = styled.TouchableOpacity``
 
-export const ResultadosFiltrados = () => {
+export interface ResultadosFiltradosProps {
+    result: any[]
+}
 
-    const naviagtion = useNavigation()
+export const ResultadosFiltrados = (props: ResultadosFiltradosProps) => {
 
+    const route = useRoute<RouteProp<RootStackParamList, `ResultadosFiltrados`>>()
+
+
+    console.log(route.params.estabelecimentos)
     return (
         <ContainerHome>
             {/* <ScrollView> */}
 
-            <Header title='Beauty On'>
-                <ButtonReturn onPress={() => naviagtion.goBack()}>
-                    <ArrowLeft />
-                </ButtonReturn>
-                <BarraPesquisa />
-            </Header>
             <CardTipoServicoGroup/>
-            <CardsFiltradosGroup/>
+            <CardsFiltradosGroup data={route.params.estabelecimentos}/>
 
             {/* </ScrollView> */}
         </ContainerHome>
