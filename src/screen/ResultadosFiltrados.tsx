@@ -30,7 +30,6 @@ export const ResultadosFiltrados = (props: ResultadosFiltradosProps) => {
     const route = useRoute<RouteProp<RootStackParamList, `ResultadosFiltrados`>>()
 
 
-    console.log(route.params.estabelecimentos)
     return (
         <ContainerHome>
             {/* <ScrollView> */}

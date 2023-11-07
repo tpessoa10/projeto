@@ -21,7 +21,10 @@ const fotoUri = `https://img.freepik.com/vetores-premium/modelo-de-logotipo-vint
 
 export const CardsContainer = () => {
     
-    var [saloes, setSaloes] = useState([])
+    const [saloesProx, setSaloesProx] = useState([])
+    const [pedicures, setPedicures] = useState([])
+    const [manicure, setManicure] = useState([])
+
     useEffect(() => {
         
         const fetchData = async () => {
@@ -29,8 +32,14 @@ export const CardsContainer = () => {
                 let location = await Location.getCurrentPositionAsync({})
                 let latitude = location.coords.latitude
                 let longitude = location.coords.longitude
-                const response = await getEstabelecimentosProximos(latitude, longitude)
-                setSaloes(response)
+                const saloesProximos = await getEstabelecimentosProximos(latitude, longitude)
+                const pedicures = await getEstabelecimentosProximos(latitude, longitude, ['0003'])
+                const manicure = await getEstabelecimentosProximos(latitude, longitude, ['0002'])
+
+
+                setSaloesProx(saloesProximos)
+                setPedicures(pedicures)
+                setManicure(manicure)
             } catch (error){
                 console.error('Erro ao obter os estabelecimentos:', error)
             }
@@ -42,16 +51,17 @@ export const CardsContainer = () => {
         <ScrollView>
 
             <SectionCard>
-                <TitleSection>Salões Proximos</TitleSection>
-                
-                    <CardGroupScrolling data={saloes}/>
+                <TitleSection>Cabeleireiro Proximos</TitleSection>
+                <CardGroupScrolling data={saloesProx}/>
             </SectionCard>
             <SectionCard>
                 <TitleSection>Pedicure</TitleSection>
+                <CardGroupScrolling data={pedicures}/>
+
             </SectionCard>
             <SectionCard>
-                <TitleSection>Design de sobrancelha</TitleSection>
-                
+                <TitleSection>Manicure</TitleSection>
+                <CardGroupScrolling data={manicure}/>
             </SectionCard>
         </ScrollView>
     )

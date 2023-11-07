@@ -28,7 +28,6 @@ export const HomePage = () => {
         <ContainerHome>
             {/* <ScrollView> */}
 
-            <CardTipoServicoGroup/>
             <CardsContainer/>
             {/* </ScrollView> */}
         </ContainerHome>

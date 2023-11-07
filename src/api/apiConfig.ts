@@ -3,7 +3,7 @@ import axios, { AxiosInstance } from "axios";
 export class Api {
 
     static readonly instace: AxiosInstance = axios.create({
-        baseURL: "http://168.75.103.246",
+        baseURL: "https://bullfrog-garb.cyclic.app/",
     })
 
     public static async get(url: string) {
@@ -19,3 +19,5 @@ export class Api {
     }
     
 }
+
+// link reserva: http://168.75.103.246

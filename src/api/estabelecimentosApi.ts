@@ -1,8 +1,8 @@
 import { Api } from "./apiConfig";
 
 
-const getEstabelecimentosProximos = async (latitude: number, longitude: number) => {
-    const response = await Api.get(`/estabelecimentos/proximos?lat=${latitude}&long=${longitude}`);
+const getEstabelecimentosProximos = async (latitude: number, longitude: number, tipoServico?: string[]) => {
+    const response = await Api.get(`/estabelecimentos/proximos?lat=${latitude}&long=${longitude}&tipoServico=${tipoServico?.toString()}`);
 
     return response;
 }
