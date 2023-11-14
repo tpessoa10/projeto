@@ -10,7 +10,7 @@ const InputView = styled.View`
     padding-left: 12px;
     gap: 8px;
     flex-direction: row;
-    background-color: #ffffff65;
+    background-color: #fff65;
     border-radius: 999px;
     height: 48px;
 `

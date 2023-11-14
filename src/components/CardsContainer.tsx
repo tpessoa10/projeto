@@ -49,7 +49,6 @@ export const CardsContainer = () => {
     
     return (
         <ScrollView>
-
             <SectionCard>
                 <TitleSection>Cabeleireiro Proximos</TitleSection>
                 <CardGroupScrolling data={saloesProx}/>

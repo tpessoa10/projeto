@@ -11,26 +11,26 @@ import { ResultadosFiltrados } from './ResultadosFiltrados';
 import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
 
 const ContainerHome = styled.View`
-
     padding-left: 12px;
     padding-right: 12px;
     display: flex;
     width: 100%;
     gap: 32px;
+    background-color: #8A877B;
 `
 
 export const HomePage = () => {
     const navigation = useNavigation()
     const [pesquisa, setPesquisa] = useState('')
 
-
     return (
-        <ContainerHome>
-            {/* <ScrollView> */}
-
-            <CardsContainer/>
-            {/* </ScrollView> */}
-        </ContainerHome>
+        /*<ContainerHome>*/
+        <SafeAreaView>        
+            <ScrollView>
+                <CardsContainer/>
+            </ScrollView>
+        </SafeAreaView>
+        /*</ContainerHome>*/
     )
 }
 
