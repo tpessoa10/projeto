@@ -36,6 +36,8 @@ export const Login = (props: ResultadosFiltradosProps) => {
         <ContainerHome>
             {/* <ScrollView> */}
 
+            {/*Tela de Login ainda não navega para Home*/}
+
             <InputContainer/>
 
             {/* </ScrollView> */}
