@@ -10,11 +10,13 @@ import { ResultadosFiltrados } from './src/screen/ResultadosFiltrados';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Header } from './src/components/Header';
 import { BarraPesquisa } from './src/components/BarraPesquisa';
+import { Login } from './src/screen/Login';
 
 //const stack = createNativeStackNavigator();
 export type RootStackParamList = {
   Home: undefined;
   ResultadosFiltrados: {estabelecimentos: any[]};
+  Login: undefined;
 }
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -48,7 +50,8 @@ export default function App() {
       }, headerBackVisible: true, contentStyle: {backgroundColor: `#fff`}}}>
         <Stack.Group>
           <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="ResultadosFiltrados" component={ResultadosFiltrados}  />
+          <Stack.Screen name="ResultadosFiltrados" component={ResultadosFiltrados} />
+          <Stack.Screen name="Login" component={Login}  options={{headerShown: false}}/>
         </Stack.Group>
       </Stack.Navigator>
       <StatusBar style="auto"/>
