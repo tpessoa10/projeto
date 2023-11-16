@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' screenOptions={{header: () => {
+      <Stack.Navigator initialRouteName='Login' screenOptions={{header: () => {
         return (
           <Header title='Beauty On' />
         )

@@ -35,8 +35,6 @@ export const InputContainer = () => {
         navigation.navigate("Home")
     }
 
-
-
     return (
 
         <Container>
