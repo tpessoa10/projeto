@@ -11,12 +11,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Header } from './src/components/Header';
 import { BarraPesquisa } from './src/components/BarraPesquisa';
 import { Login } from './src/screen/Login';
+import { PerfilEstabelecimentoContainer } from './src/components/PerfilEstabelecimentoContainer';
+import { PerfilEstabelecimento } from './src/screen/PerfilEstabelecimento';
 
 //const stack = createNativeStackNavigator();
 export type RootStackParamList = {
   Home: undefined;
   ResultadosFiltrados: {estabelecimentos: any[]};
   Login: undefined;
+  PerfilEstabelecimento: undefined
 }
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -43,7 +46,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' screenOptions={{header: () => {
+      <Stack.Navigator initialRouteName='Login' screenOptions={{header: () => {
         return (
           <Header title='Beauty On' />
         )
@@ -52,6 +55,7 @@ export default function App() {
           <Stack.Screen name="Home" component={HomePage} />
           <Stack.Screen name="ResultadosFiltrados" component={ResultadosFiltrados} />
           <Stack.Screen name="Login" component={Login}  options={{headerShown: false}}/>
+          <Stack.Screen name="PerfilEstabelecimento" component={PerfilEstabelecimento}  options={{headerShown: false}}/>
         </Stack.Group>
       </Stack.Navigator>
       <StatusBar style="auto"/>

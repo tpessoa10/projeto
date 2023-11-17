@@ -1,10 +1,10 @@
 import { useNavigation } from "@react-navigation/native"
-import { NativeSyntheticEvent, TextInputSubmitEditingEventData } from "react-native"
+import { GestureResponderEvent, NativeSyntheticEvent, TextInputSubmitEditingEventData } from "react-native"
 import styled from "styled-components/native"
 
 interface BotaoProps{
     texto:string
-    onSubmit:(e: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
+    onSubmit:(e: GestureResponderEvent) => void
 }
 
 
@@ -33,7 +33,7 @@ export const Botao = ({texto, onSubmit}:BotaoProps) => {
     return (
         <BotaoContainer>
 
-        <BotaoForm>
+        <BotaoForm onPress={onSubmit}>
             <TextoBotao>{texto}</TextoBotao>
         </BotaoForm>
         </BotaoContainer>

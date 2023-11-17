@@ -17,11 +17,12 @@ const ImageLogo = styled.Image`
 
 interface CardProps {
     nome: string
-    fotoUrl: string 
+    fotoUrl: string
+    onPress: () => void
 }
-export const Card = ({nome, fotoUrl}: CardProps) => {
+export const Card = ({nome, fotoUrl, onPress}: CardProps) => {
     return (
-        <SimpleCard>
+        <SimpleCard onTouchEnd={onPress}>
             <ImageLogo source={{uri: fotoUrl}}/>
 
             <Text>{nome}</Text>
