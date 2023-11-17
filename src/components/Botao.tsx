@@ -1,10 +1,6 @@
 import { useNavigation } from "@react-navigation/native"
-<<<<<<< HEAD
-import { GestureResponderEvent } from "react-native"
-import { NativeSyntheticEvent, TextInputSubmitEditingEventData } from "react-native"
-=======
 import { GestureResponderEvent, NativeSyntheticEvent, TextInputSubmitEditingEventData } from "react-native"
->>>>>>> Thiago
+ 
 import styled from "styled-components/native"
 
 interface BotaoProps{
