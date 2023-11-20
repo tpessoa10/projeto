@@ -1,11 +1,14 @@
-import { Text } from "react-native"
+import { NativeSyntheticEvent, Text, TextInputChangeEventData, TextInputSubmitEditingEventData } from "react-native"
 import styled from "styled-components/native"
 
 interface InputProps{
     texto:string
+    onChange?: (e: string) => void
+    value?: string
+    submitEditing?: (e:NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void
 }
 
-export const Input = ({texto}:InputProps) => {
+export const Input = ({texto, value, onChange, submitEditing}:InputProps) => {
 
     const CampoInput = styled.TextInput`
         height: 40px;
@@ -18,7 +21,8 @@ export const Input = ({texto}:InputProps) => {
     return (
         <>
         <Text>{texto}</Text>
-        {texto === 'Senha' ? <CampoInput secureTextEntry/> : <CampoInput />}
+        {texto === 'Senha' ? <CampoInput onChangeText={onChange} value={value} onSubmitEditing={submitEditing} secureTextEntry/> : <CampoInput value={value} 
+        onSubmitEditing={submitEditing} onChangeText={onChange}/>}
         </>
     )
 }

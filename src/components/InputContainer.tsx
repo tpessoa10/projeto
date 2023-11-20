@@ -1,10 +1,10 @@
-import styled from "styled-components/native"
-import { Input } from "./Input"
-import { Botao } from "./Botao"
-import { NavigationContainer, useNavigation } from "@react-navigation/native"
-import {SvgUri} from 'react-native-svg'
 import { Image } from "react-native"
 import { Dimensions } from "react-native"
+import { useState } from "react"
+import { styled } from "styled-components/native"
+import { useNavigation } from "@react-navigation/native"
+import { Input } from "./Input"
+import { Botao } from "./Botao"
 
 interface InputContainerProps{
     children:React.ReactNode
@@ -26,24 +26,35 @@ interface InputContainerProps{
         align-self: center;
     `
 
-export const InputContainer = () => {
+ export const InputContainer = () => {
+    const [usuario, setUsuario] = useState('')
+    const [senha, setSenha] = useState('')
     const tamanhoTela = Dimensions.get('window').width
     const tamanhoImagem = tamanhoTela * 0.65
     const navigation = useNavigation()
 
     const handleSubmit = () => {
-        navigation.navigate("Home")
+        console.log('login ', usuario)
+        console.log('senha ', senha)
     }
+
+   /* const handleUsuarioChange = (text) => {
+        setUsuario(text)
+    }
+
+    const handleSenhaChange = (text) => {
+        setSenha(text)
+    }*/
 
     return (
 
         <Container>
             <ImagemLogin source={require("../../assets/beautyLogoBranco.png")} width={tamanhoImagem}/>
-            <Input texto="Usuario"/>
-            <Input texto="Senha"/>
+            <Input texto="Usuario" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
+            <Input texto="Senha" value={senha} onChange={(text) => setSenha(text)} submitEditing={() => {}}/>
             <Botao texto='Entrar' onSubmit={handleSubmit}/>
         </Container>
-
-        
     )
+    
 }
+
