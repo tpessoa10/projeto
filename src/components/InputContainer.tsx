@@ -1,5 +1,5 @@
 import { Image } from "react-native"
-import { Dimensions } from "react-native"
+import { Text, Dimensions } from "react-native"
 import { useState } from "react"
 import { styled } from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
@@ -38,6 +38,7 @@ interface InputContainerProps{
         console.log('senha ', senha)
     }
 
+
    /* const handleUsuarioChange = (text) => {
         setUsuario(text)
     }
@@ -47,12 +48,12 @@ interface InputContainerProps{
     }*/
 
     return (
-
         <Container>
             <ImagemLogin source={require("../../assets/beautyLogoBranco.png")} width={tamanhoImagem}/>
             <Input texto="Usuario" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
             <Input texto="Senha" value={senha} onChange={(text) => setSenha(text)} submitEditing={() => {}}/>
             <Botao texto='Entrar' onSubmit={handleSubmit}/>
+            <Text>Não tem conta? Crie uma agora!</Text>
         </Container>
     )
     
