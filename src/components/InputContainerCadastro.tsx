@@ -1,5 +1,5 @@
 import { Image, ScrollView } from "react-native"
-import { Text, Dimensions, StyleSheet, View, TouchableOpacity } from "react-native"
+import { Text, Dimensions, StyleSheet, View, TouchableOpacity, TouchableWithoutFeedback } from "react-native"
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useState } from "react"
 import { styled } from "styled-components/native"
@@ -29,6 +29,12 @@ const ImagemLogin = styled.Image`
     width: ${({width}) => width}px;
     align-self: center;
 `
+
+const DismissKeyboard = ({ children }) => (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
+        {children}
+    </TouchableWithoutFeedback>
+);
 
 export const InputContainerCadastro = () => {
     const [usuario, setUsuario] = useState('')
@@ -66,8 +72,8 @@ export const InputContainerCadastro = () => {
                               onSelectSwitch={onSelectSwitch}
                               selectionColor={'orange'}
                         />
-                    </View>        
-                    <Input texto="Nome Completo" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
+                    </View>       
+                    <Input texto="Nome Completo" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>    
                     <Input texto="Nome de Usuario" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
                     <Input texto="E-mail" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
                     <Input texto="Senha" value={senha} onChange={(text) => setSenha(text)} submitEditing={() => {}}/>
