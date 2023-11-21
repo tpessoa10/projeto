@@ -5,26 +5,34 @@ import { styled } from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
 import { Input } from "./Input"
 import { Botao } from "./Botao"
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 interface InputContainerProps{
     children:React.ReactNode
 }
-    const Container = styled.View`
-        margin-top: 20px;
-    `
 
-    const Texto = styled.Text`
-        font-size: 30px;
-        text-align: center;
-        margin-bottom: 10px;
-    `
+const Container = styled.View`
+    margin-top: 20px;
+`
 
-    const ImagemLogin = styled.Image`
-        height: 200;
-        resize: contain;
-        width: ${({width}) => width}px;
-        align-self: center;
-    `
+const Texto = styled.Text`
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+`
+
+const TextoColorido = styled.Text`
+    color: #0022ff
+`
+
+const ImagemLogin = styled.Image`
+    height: 200;
+    resize: contain;
+    width: ${({width}) => width}px;
+    align-self: center;
+`
 
  export const InputContainer = () => {
     const [usuario, setUsuario] = useState('')
@@ -53,7 +61,10 @@ interface InputContainerProps{
             <Input texto="Usuario" value={usuario} onChange={(text) => setUsuario(text)} submitEditing={() => {}}/>
             <Input texto="Senha" value={senha} onChange={(text) => setSenha(text)} submitEditing={() => {}}/>
             <Botao texto='Entrar' onSubmit={handleSubmit}/>
-            <Text>Não tem conta? Crie uma agora!</Text>
+            
+            <Texto>Não tem conta? 
+                <TextoColorido> Crie uma agora!</TextoColorido>
+            </Texto>
         </Container>
     )
     

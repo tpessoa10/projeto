@@ -44,11 +44,9 @@ export default function App() {
     })()
   }, [])
 
-
-
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Cadastro' screenOptions={{header: () => {
+      <Stack.Navigator initialRouteName='Login' screenOptions={{header: () => {
         return (
           <Header title='Beauty On' />
         )
