@@ -1,12 +1,15 @@
 import { Image } from "react-native"
+
 import { Text, Dimensions } from "react-native"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { styled } from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
 import { Input } from "./Input"
 import { Botao } from "./Botao"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
+
 
 interface InputContainerProps{
     children:React.ReactNode
