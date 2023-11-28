@@ -8,7 +8,6 @@ import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 import { ArrowLeft } from 'phosphor-react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
-import { RootStackParamList } from '../../App';
 import { InputContainer } from '../components/InputContainer';
 import { Input } from '../components/Input';
 import React from 'react';

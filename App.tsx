@@ -14,16 +14,9 @@ import { Login } from './src/screen/Login';
 import { Cadastro } from './src/screen/Cadastro';
 import { PerfilEstabelecimentoContainer } from './src/components/PerfilEstabelecimentoContainer';
 import { PerfilEstabelecimento } from './src/screen/PerfilEstabelecimento';
+import { Routes } from './src/routes';
 
 //const stack = createNativeStackNavigator();
-export type RootStackParamList = {
-  Home: undefined;
-  ResultadosFiltrados: {estabelecimentos: any[]};
-  Login: undefined;
-  Cadastro: undefined;
-  PerfilEstabelecimento: undefined
-}
-const Stack = createNativeStackNavigator<RootStackParamList>()
 
 
 export default function App() {
@@ -46,19 +39,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Login' screenOptions={{header: () => {
-        return (
-          <Header title='Beauty On' />
-        )
-      }, headerBackVisible: true, contentStyle: {backgroundColor: `#fff`}}}>
-        <Stack.Group>
-          <Stack.Screen name="Home" component={HomePage} />
-          <Stack.Screen name="ResultadosFiltrados" component={ResultadosFiltrados} />
-          <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
-          <Stack.Screen name="Cadastro" component={Cadastro} options={{headerShown: false}}/>
-          <Stack.Screen name="PerfilEstabelecimento" component={PerfilEstabelecimento} options={{headerShown: false}}/>
-        </Stack.Group>
-      </Stack.Navigator>
+      <Routes />
       <StatusBar style="auto"/>
     </NavigationContainer>
   );

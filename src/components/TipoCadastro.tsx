@@ -51,7 +51,6 @@ export const TipoCadastro = ({
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              TouchableOpacity
               activeOpacity={1}
               onPress={() => updatedSwitchData(2)}
               style={{

@@ -8,7 +8,7 @@ import {CardsFiltradosGroup} from '../components/CardsFiltradosGroup';
 import { ArrowLeft } from 'phosphor-react-native';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { CardTipoServicoGroup } from '../components/CardTipoServicoGroup';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../routes/app.routes';
 const ContainerHome = styled.View`
 
     padding-left: 12px;
