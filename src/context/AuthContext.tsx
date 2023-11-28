@@ -7,7 +7,7 @@ const storage = new MMKVLoader().withEncryption().withInstanceID(`Auth`).initial
 interface AuthContextData {
     user: object
     signed: boolean
-    signIn(): Promise<void>
+    signIn(email: string, senha: string): Promise<void>
     signOut(): void
 }
 
@@ -21,7 +21,7 @@ export const AuthProvider = ({children}: AuthProviderProps) => {
 
     const [user, setUser] = useMMKVStorage<object | undefined>(`user`, storage, undefined)
 
-    const signIn = useCallback(async () => {
+    const signIn = useCallback(async (email: string, senha: string) => {
         setUser({name: `Teste`})
     }, [])
 

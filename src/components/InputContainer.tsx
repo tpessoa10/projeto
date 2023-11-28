@@ -1,7 +1,7 @@
 import { Image } from "react-native"
 
 import { Text, Dimensions } from "react-native"
-import { useCallback, useState } from "react"
+import { useCallback, useContext, useState } from "react"
 import { styled } from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
 import { Input } from "./Input"
@@ -9,6 +9,7 @@ import { Botao } from "./Botao"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { AuthContext } from "../context/AuthContext"
 
 
 interface InputContainerProps{
@@ -38,16 +39,18 @@ const ImagemLogin = styled.Image`
 `
 
 export const InputContainer = () => {
+
+    const {signIn} = useContext(AuthContext)
+
     const [usuario, setUsuario] = useState('')
     const [senha, setSenha] = useState('')
     const tamanhoTela = Dimensions.get('window').width
     const tamanhoImagem = tamanhoTela * 0.65
     const navigation = useNavigation()
 
-    const handleSubmit = () => {
-        console.log('login ', usuario)
-        console.log('senha ', senha)
-    }
+    const handleSubmit = useCallback(async () => {
+        await signIn(usuario, senha)
+    }, [usuario, senha])
 
 
    /* const handleUsuarioChange = (text) => {
